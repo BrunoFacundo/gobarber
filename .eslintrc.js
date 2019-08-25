@@ -17,6 +17,7 @@ module.exports = {
         camelcase: 'off',
         'prettier/prettier': 'error',
         'class-methods-use-this': 'off',
+        'no-console': 'off',
         'no-param-reassign': 'off',
         'no-unused-vars': ['error', { argsIgnorePattern: 'next' }]
     }

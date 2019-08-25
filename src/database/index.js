@@ -1,20 +1,34 @@
 import Sequelize from 'sequelize';
+import mongoose from 'mongoose';
+
+import User from '../app/models/User';
+import File from '../app/models/File';
+import Appointment from '../app/models/Appointment';
 
 import databaseConfig from '../config/database';
 
-import User from '../app/models/User';
-
-const models = [User];
+const models = [User, File, Appointment];
 
 class Database {
     constructor() {
-        this.connection = new Sequelize(databaseConfig);
-
         this.init();
+        this.mongo();
     }
 
     init() {
-        models.forEach(model => model.init(this.connection));
+        this.connection = new Sequelize(databaseConfig);
+
+        models
+            .map(model => model.init(this.connection))
+            .map(model => model.associate && model.associate(this.connection.models));
+    }
+
+    mongo() {
+        const url = `mongodb://${process.env.MONGO_HOST}:${process.env.MONGO_PORT}/${process.env.MONGO_NAME}`;
+        this.mongoConnection = mongoose.connect(url, {
+            useNewUrlParser: true,
+            useFindAndModify: true
+        });
     }
 }
 
