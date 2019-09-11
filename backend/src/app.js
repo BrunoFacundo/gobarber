@@ -1,14 +1,13 @@
+import * as Sentry from '@sentry/node';
+import cors from 'cors';
 import 'dotenv/config';
 import express from 'express';
-import path from 'path';
-import cors from 'cors';
-import Youch from 'youch';
-import * as Sentry from '@sentry/node';
 import 'express-async-errors';
-
+import path from 'path';
+import Youch from 'youch';
 import sentryConfig from './config/sentry';
-import routes from './routes';
 import './database';
+import routes from './routes';
 
 class App {
     constructor() {

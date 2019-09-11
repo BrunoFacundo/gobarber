@@ -1,5 +1,4 @@
 import Bee from 'bee-queue';
-
 import CancellationMail from '../app/jobs/CancellationMail';
 import redisConfig from '../config/redis';
 
