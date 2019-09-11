@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
-import PerfectScrollbar from 'react-perfect-scrollbar';
 import { lighten } from 'polished';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
     position: relative;
@@ -47,6 +47,10 @@ export const NotificationList = styled.div`
         border-left: 20px solid transparent;
         border-right: 20px solid transparent;
         border-bottom: 20px solid rgba(0, 0, 0, 0.6);
+    }
+
+    span{
+        color: #fff;
     }
 `;
 
