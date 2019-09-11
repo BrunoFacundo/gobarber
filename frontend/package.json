@@ -1,6 +1,8 @@
 {
     "name": "gobarber-frontend",
     "version": "1.0.0",
+    "author": "Bruno Facundo <brunofr95@gmail.com>",
+    "license": "MIT",
     "scripts": {
         "start": "react-app-rewired start",
         "build": "react-app-rewired build",
