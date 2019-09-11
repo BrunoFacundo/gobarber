@@ -49,7 +49,7 @@ export const NotificationList = styled.div`
         border-bottom: 20px solid rgba(0, 0, 0, 0.6);
     }
 
-    span{
+    span {
         color: #fff;
     }
 `;
